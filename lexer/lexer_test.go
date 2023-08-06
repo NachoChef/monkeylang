@@ -15,6 +15,15 @@ func TestNextToken(t *testing.T) {
 	};
 	
 	let result = add(five, ten);
+
+	!/<>-
+	true
+	false
+	if
+	else
+	return
+	==
+	!=
 	`
 
 	tests := []struct {
@@ -57,6 +66,18 @@ func TestNextToken(t *testing.T) {
 		{token.IDENT, "ten"},
 		{token.RPAREN, ")"},
 		{token.SEMICOLON, ";"},
+		{token.BANG, "!"},
+		{token.SLASH, "/"},
+		{token.LT, "<"},
+		{token.GT, ">"},
+		{token.MINUS, "-"},
+		{token.TRUE, "true"},
+		{token.FALSE, "false"},
+		{token.IF, "if"},
+		{token.ELSE, "else"},
+		{token.RETURN, "return"},
+		{token.EQ, "=="},
+		{token.NOT_EQ, "!="},
 	}
 
 	l := New(input)
